@@ -15,5 +15,19 @@ class Laundry extends DB{
         }
     }
 
+    public function getBill($id){
+        $sql=$this->login_db->prepare("SELECT * FROM request LEFT JOIN bill ON request.bill_id=bill.id LEFT JOIN price ON request.pr_id=price.id WHERE request.landury_id=?");
+        $sql->execute([$this->getLaundry($id)]);
+        return$sql;
+    }
+
+    public function getLaundry($id){
+        $sql=$this->login_db->prepare("SELECT * FROM laundrys WHERE user_id=?");
+        $sql->execute([$id]);
+        foreach ($sql as $s){
+            return $s['id'];
+        }
+    }
+
 
 }

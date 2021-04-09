@@ -65,7 +65,7 @@ if(isset($_POST['sub-login'])){
                 </div>
 
                 <div class="text-center">
-                    <h2>المكتبة الالكترونية </h2>
+                    <h2>اضافة مغسلة جديدة  </h2>
 
                     <?php
 

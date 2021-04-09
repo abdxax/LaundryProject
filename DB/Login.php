@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 require 'DB.php';
 class Login extends DB{
     private $login_db;
@@ -14,14 +14,16 @@ class Login extends DB{
         if($sql->rowCount()==1){
             foreach ($sql as $s){
                 if($s['role_id']==1){
-                   echo "admin";
+                    $_SESSION['user_id']=$s['id'];
+                    header("location:admin/index.php");
                 }
                 else if($s['role_id']==2){
                   $_SESSION['user_id']=$s['id'];
-                  header("location:laundry/addNewItem.php");
+                  header("location:laundry/index.php");
                 }
                 else if($s['role_id']==3){
-                  echo "coustmoer";
+                    $_SESSION['user_id']=$s['id'];
+                    header("location:coustmor/index.php");
                 }
                 else{
 
