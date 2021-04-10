@@ -20,13 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd8dc4aa-162b-452b-b6bf-55ba7b11aba2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laundry/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laundry/order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coustmor/show.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/Laundry.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/Laundry.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laundry/addNewItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/laundry/addNewItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/cous.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/cous.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coustmor/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/coustmor/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +65,7 @@
       <workItem from="1617735985386" duration="3803000" />
       <workItem from="1617993397044" duration="4004000" />
       <workItem from="1618007988564" duration="4043000" />
+      <workItem from="1618081396599" duration="4290000" />
     </task>
     <servers />
   </component>
@@ -83,16 +82,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="289" y="158" key="NewPhpClassDialog" timestamp="1618010879842">
       <screen x="0" y="25" width="1440" height="809" />
     </state>
     <state x="289" y="158" key="NewPhpClassDialog/0.25.1440.809@0.25.1440.809" timestamp="1618010879842" />
-    <state x="540" y="355" key="NewPhpFileDialog" timestamp="1618010888320">
+    <state x="540" y="355" key="NewPhpFileDialog" timestamp="1618082065128">
       <screen x="0" y="25" width="1440" height="809" />
     </state>
-    <state x="540" y="355" key="NewPhpFileDialog/0.25.1440.809@0.25.1440.809" timestamp="1618010888320" />
+    <state x="540" y="355" key="NewPhpFileDialog/0.25.1440.809@0.25.1440.809" timestamp="1618082065128" />
     <state x="540" y="357" key="NewPhpFileDialog/0.25.1440.813@0.25.1440.813" timestamp="1617739056838" />
   </component>
 </project>

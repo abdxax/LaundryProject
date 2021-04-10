@@ -55,6 +55,32 @@ class Cust extends DB{
         return $sql;
     }
 
+    public function getDetles($id){
+        $sql=$this->login_db->prepare("SELECT * FROM request WHERE bill_id=?");
+        $sql->execute([$id]);
+        return $sql;
+    }
+
+    public function getRe($id){
+        $sql=$this->login_db->prepare("SELECT * FROM price WHERE id=?");
+        $sql->execute([$id]);
+
+        foreach ($sql as $s){
+            return $s['ReType'];
+        }
+        //return ;
+    }
+
+    public function getTy($id){
+        $sql=$this->login_db->prepare("SELECT * FROM price WHERE id=?");
+        $sql->execute([$id]);
+
+        foreach ($sql as $s){
+            return $s['laType'];
+        }
+        //return ;
+    }
+
 
 
 

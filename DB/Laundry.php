@@ -29,5 +29,33 @@ class Laundry extends DB{
         }
     }
 
+    public function getLaundryUser($id){
+        $sql=$this->login_db->prepare("SELECT * FROM laundrys WHERE user_id=?");
+        $sql->execute([$id]);
+        return $sql;
+    }
+
+    public function getLaundryData($id){
+        $sql=$this->login_db->prepare("SELECT * FROM laundrys WHERE id=?");
+        $sql->execute([$id]);
+        return $sql;
+    }
+
+    public function UpdateLaundryData($namw,$res,$lic,$phone,$email,$loca,$id){
+        $sql=$this->login_db->prepare("UPDATE laundrys SET LaundryName=?,RecordNu=?,LicenseNu=?,email=?,location=? WHERE id=?");
+        if($sql->execute([$namw,$res,$lic,$email,$loca,$id])){
+            header('location:add.php');
+        }
+        //return $sql;
+    }
+
+    public function DeletaundryData($id){
+        $sql=$this->login_db->prepare("DELETE FROM laundrys WHERE id=?");
+        if($sql->execute([$id])){
+             header('location:add.php');
+        }
+        //return $sql;
+    }
+
 
 }

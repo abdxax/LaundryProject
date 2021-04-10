@@ -2,14 +2,14 @@
 session_start();
 require '../DB/cous.php';
 $log=new Cust();
-$lay=$log->getLaundry();
+$lay=$log->getDetles($_GET['id']);
 $cols=$log->prcc();
 $biils=$log->getBill($_SESSION['user_id']);
 $msg='';
 if(isset($_POST['sub'])){
     $co=$_POST['ch'];
     $laun=$_POST['laun'];
-$log->addBill($_SESSION['user_id'],$co,$laun);
+    $log->addBill($_SESSION['user_id'],$co,$laun);
 
 }
 
@@ -41,54 +41,27 @@ $log->addBill($_SESSION['user_id'],$co,$laun);
 <div class="row">
     <div class="col-md-12">
         <div class="col-md-6">
-            <form class="" method="post">
-                <div class="form-group">
-                    <?php
-                    foreach ($cols as $pr){
-                        echo '
-                        <input type="checkbox" name="ch[]" value="'.$pr['id'].'"> '.$pr['ReType'].'- '.$pr['laType'].' - '.$pr['price'].'ريال 
-                        <br>
-                        ';
-                    }
-                    ?>
-                </div>
 
-                <div class="form-group">
-                    <select name="laun">
-                        <?php
-                        foreach ($lay as $lr){
-                            echo '
-                        <option value="'.$lr['id'].'">'.$lr['LaundryName'].' - '.$lr['location'].'</option>
-                        ';
-                        }
-                        ?>
-                    </select>
-
-                </div>
-
-                <div class="form-group">
-                    <input type="submit" name="sub">
-                </div>
-
-
-            </form>
         </div>
         <table class="table">
             <thead>
-             <tr>
-                 <th>No</th>
-                 <th>Price</th>
-             </tr>
+            <tr>
+                <th>القطعه</th>
+                <th>النوع</th>
+                <th>السعر </th>
+            </tr>
             </thead>
             <tbody>
             <?php
-
-            foreach ($biils as $its){
+$total=0;
+            foreach ($lay as $its){
+                $total+=$log->getprice($its['pr_id']);
                 echo '
             <tr>
-            <td>'.$its['id'].'</td>
-            <td>'.$its['total_price'].'</td>
-            <td><a href="show.php?id='.$its['id'].'">Show</a> </td>
+            <td>'.$log->getRe($its['pr_id']).'</td>
+             <td>'.$log->getTy($its['pr_id']).'</td>
+              <td>'.$log->getprice($its['pr_id']).'</td>
+           
            
             
             
@@ -102,6 +75,12 @@ $log->addBill($_SESSION['user_id'],$co,$laun);
             ?>
             </tbody>
         </table>
+        <div class="text-center">
+            <?php
+            echo $total;
+
+            ?>
+        </div>
     </div>
 </div>
 <!-- start model pop-->

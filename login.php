@@ -49,9 +49,9 @@ if(isset($_POST['sub-login'])){
 <body >
 
 <div class="row">
-    <div class="col-md-6 left-login"></div>
 
-    <div class="col-md-6">
+
+    <div class="col-md-12">
         <div class="container">
             <div class="col-12 mt-5">
                 <div class="col-7 text-center">
@@ -114,7 +114,7 @@ if(isset($_POST['sub-login'])){
                         </div>
 
                         <div class="form-group  text-center">
-                            <input type="submit" class="btn btm-bas btn-center"  name="sub-login" value="تسجيل دخول ">
+                            <input type="submit" class="btn btn-info btn-center"  name="sub-login" value="تسجيل دخول ">
                         </div>
 
                     </form>
