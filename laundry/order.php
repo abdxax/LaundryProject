@@ -74,8 +74,8 @@ if(isset($_POST['sub-login'])){
                 <tr>
                 
                 <td>'.$c['bill_id'].'</td>
-                 <td>'.$c['ReType'].'</td>
-                  <td>'.$c['laType'].'</td>
+                 <td>'.$c['total_price'].'</td>
+                  <td><a href="show.php?id='.$c['bill_id'].'">Show</a> </td>
                   <td>'.$c['price'].'</td>
 
 </tr>

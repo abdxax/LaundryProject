@@ -16,8 +16,14 @@ class Laundry extends DB{
     }
 
     public function getBill($id){
-        $sql=$this->login_db->prepare("SELECT * FROM request LEFT JOIN bill ON request.bill_id=bill.id LEFT JOIN price ON request.pr_id=price.id WHERE request.landury_id=?");
+        $sql=$this->login_db->prepare("SELECT DISTINCT * FROM request LEFT JOIN bill ON request.bill_id=bill.id LEFT JOIN price ON request.pr_id=price.id WHERE request.landury_id=?");
         $sql->execute([$this->getLaundry($id)]);
+        return$sql;
+    }
+
+    public function getRegBill($id){
+        $sql=$this->login_db->prepare("SELECT  * FROM request  WHERE bill_id=?");
+        $sql->execute([$id]);
         return$sql;
     }
 
@@ -56,6 +62,38 @@ class Laundry extends DB{
         }
         //return $sql;
     }
+
+    public function getRe($id){
+        $sql=$this->login_db->prepare("SELECT * FROM price WHERE id=?");
+        $sql->execute([$id]);
+
+        foreach ($sql as $s){
+            return $s['ReType'];
+        }
+        //return ;
+    }
+
+    public function getTy($id){
+        $sql=$this->login_db->prepare("SELECT * FROM price WHERE id=?");
+        $sql->execute([$id]);
+
+        foreach ($sql as $s){
+            return $s['laType'];
+        }
+        //return ;
+    }
+
+    public function getprice($id){
+        $sql=$this->login_db->prepare("SELECT * FROM price WHERE id=?");
+        $sql->execute([$id]);
+
+        foreach ($sql as $s){
+            return $s['price'];
+        }
+        //return ;
+    }
+
+
 
 
 }
